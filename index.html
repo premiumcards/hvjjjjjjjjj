@@ -185,21 +185,69 @@
       <div><a href="https://t.me/Premium_cards_shoz_support" target="_blank" rel="noreferrer">Telegram support</a></div>
     </footer>
 
-    <div class="modal-backdrop" id="modal" aria-hidden="true">
-      <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-        <button class="modal-close" type="button" aria-label="Close">×</button>
-        <p class="eyebrow"><span></span> BLACK Z / SUPPORT</p>
-        <h2 id="modal-title">Edition <em>request.</em></h2>
-        <p id="modal-copy">This preview does not process payments. Contact BLACK Z support to ask about an edition.</p>
-       <img
-  id="payment-qr"
-  src="payment-qr.jpg"
-  alt="Payment QR"
-  style="width:250px;max-width:100%;display:block;margin:20px auto;border-radius:12px;"/>
-    <a class="primary-btn telegram-link" href="https://t.me/Premium_cards_shoz_support" target="_blank" rel="noreferrer">Open Telegram support <b>→</b></a>
-      </section>
-    </div>
 
+<div class="modal-backdrop" id="modal" aria-hidden="true">
+
+<section class="modal payment-modal" role="dialog">
+
+<button class="modal-close" type="button">×</button>
+
+<div id="step1">
+
+<p class="eyebrow">STEP 1/4</p>
+
+<h2>Secure Pipeline Acquisition</h2>
+
+<h3 style="text-align:center;font-size:48px;margin:20px 0;">₹1000.00</h3>
+
+<input
+type="text"
+placeholder="Enter coupon code"
+style="width:100%;padding:15px;border-radius:10px;margin-bottom:20px;">
+
+<div style="display:flex;gap:10px;margin-bottom:20px;">
+
+<button class="primary-btn" style="flex:1;">
+Scan & Pay (QR)
+</button>
+
+<button class="ghost-btn" style="flex:1;">
+Pay with UPI App
+</button>
+
+</div>
+
+<div style="text-align:center;">
+
+<img
+src="payment-qr.jpg"
+style="width:260px;border-radius:18px;">
+
+</div>
+
+<p
+style="text-align:center;
+margin-top:20px;
+color:#00d7ff;">
+
+Scan this QR using any UPI App
+
+</p>
+
+<button
+id="verifyBtn"
+class="primary-btn"
+style="width:100%;margin-top:25px;">
+
+Verify Transaction Ledger →
+
+</button>
+
+</div>
+
+</section>
+
+</div>
     <script src="script.js"></script>
   </body>
 </html>
