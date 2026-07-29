@@ -1,0 +1,203 @@
+.market-card {
+  padding: 22px;
+  border-color: rgba(255, 255, 255, .08);
+  background: linear-gradient(145deg, #312e44 0%, #162f46 105%);
+}
+
+.market-card:hover { border-color: rgba(129, 104, 218, .8); }
+.market-card .popular-tag { background: #52346f; border-color: #a57ad0; }
+
+.market-availability {
+  margin: 0 0 18px;
+  color: #17d891;
+  font-family: "DM Mono", monospace;
+  font-size: .62rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+}
+
+.pass-market { aspect-ratio: 1.59 / 1; }
+
+.pass-market .pass-front {
+  padding: 18px 25px;
+  background: linear-gradient(135deg, #070708, #101014 76%, #070708);
+  color: #f8f7fa;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, .38), inset 0 1px rgba(255, 255, 255, .08);
+}
+
+.pass-market .pass-front::before,
+.pass-market .pass-front::after { content: none; }
+
+.pass-market .pass-back {
+  padding: 18px 25px;
+  background: linear-gradient(135deg, #0c0b10, #22212b);
+}
+
+.pass-market .pass-back::before {
+  height: 39px;
+  width: calc(100% + 50px);
+  margin-left: -25px;
+  background: #050505;
+}
+
+.market-card-top {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+}
+
+.market-card-top .pass-chip {
+  width: 55px;
+  height: 39px;
+  border: 0;
+  border-radius: 7px;
+  background: linear-gradient(135deg, #ffdb00, #ffb703);
+  box-shadow: inset 0 0 0 1px rgba(255, 245, 122, .8);
+}
+
+.market-card-top .pass-chip::after {
+  left: 15px;
+  background: #a87800;
+  box-shadow: 9px 0 #a87800, 18px 0 #a87800;
+}
+
+.market-card-top small {
+  position: static;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+  color: #79777e;
+  font-size: .61rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.pass-market .market-brand {
+  position: absolute;
+  top: 51px;
+  right: 25px;
+  color: #f6f3f6;
+  font-size: 1rem;
+  letter-spacing: -.08em;
+}
+
+.market-brand em { color: #fff; }
+
+.market-number {
+  position: absolute;
+  top: 50%;
+  left: 25px;
+  display: block;
+  color: #f2eef4;
+  font-family: "DM Mono", monospace;
+  font-size: .84rem;
+  font-weight: 700;
+  letter-spacing: .16em;
+  transform: translateY(-4%);
+}
+
+.market-card-bottom {
+  position: absolute;
+  right: 25px;
+  bottom: 17px;
+  left: 25px;
+  display: grid;
+  grid-template-columns: 1.35fr .95fr .7fr;
+  gap: 10px;
+  align-items: end;
+}
+
+.market-card-bottom small {
+  position: static;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+  color: #727079;
+  font-size: .51rem;
+  line-height: 1.6;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.market-card-bottom small b {
+  position: static;
+  right: auto;
+  bottom: auto;
+  display: block;
+  color: #dedade;
+  font-family: "DM Mono", monospace;
+  font-size: .66rem;
+  letter-spacing: .04em;
+  white-space: nowrap;
+}
+
+.pass-market .market-card-bottom > strong {
+  position: static;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+  text-align: right;
+  font-size: .68rem;
+  letter-spacing: -.07em;
+  white-space: nowrap;
+}
+
+.market-meta {
+  margin: 29px 0 0;
+  padding: 19px 0;
+  border-top: 1px solid rgba(255, 255, 255, .09);
+  border-bottom: 1px solid rgba(255, 255, 255, .09);
+}
+
+.market-meta div { display: flex; justify-content: space-between; padding: 6px 0; }
+.market-meta dt { color: #aaa5b2; font-size: .74rem; }
+.market-meta dd { margin: 0; color: #f0edf3; font-size: .75rem; font-weight: 700; }
+
+.market-fee {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  margin: 29px 0;
+}
+
+.market-fee small {
+  grid-column: 1 / -1;
+  margin-bottom: 8px;
+  color: #a8a3ad;
+  font-family: "DM Mono", monospace;
+  font-size: .62rem;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+.market-fee strong { font-size: 2rem; letter-spacing: -.08em; line-height: 1; }
+.market-fee span { color: #9c96a4; font-family: "DM Mono", monospace; font-size: .61rem; }
+
+.market-preview {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid rgba(255, 255, 255, .12);
+  border-radius: 13px;
+  color: #f3f0f7;
+  background: rgba(255, 255, 255, .07);
+  font-size: .62rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  transition: .2s;
+}
+
+.market-preview:hover { border-color: #b85afa; background: #9b38e5; }
+
+.modal .telegram-link { width: 100%; margin-top: 24px; }
+
+@media (max-width: 500px) {
+  .market-card { padding: 20px 15px; }
+  .pass-market .pass-front { padding: 18px 25px; }
+  .market-number { font-size: .78rem; letter-spacing: .12em; }
+}
