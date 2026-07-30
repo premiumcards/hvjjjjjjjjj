@@ -124,3 +124,62 @@ document.querySelectorAll(".buy-btn").forEach(btn => {
     });
 
 });
+//================ STEP 2 ==================
+
+document.getElementById("goStep2").onclick=function(){
+
+paymentStep1.style.display="none";
+
+paymentStep2.style.display="block";
+
+verifyAmount.innerText=payAmount.innerText;
+
+verifyHolder.innerText=payCardHolder.innerText;
+
+verifyLimit.innerText=payLimit.innerText;
+
+}
+
+//================ STEP 3 ==================
+
+document.getElementById("goStep3").onclick=function(){
+
+if(!agree.checked){
+
+alert("Please confirm payment.");
+
+return;
+
+}
+
+paymentStep2.style.display="none";
+
+paymentStep3.style.display="block";
+
+let p=0;
+
+let timer=setInterval(()=>{
+
+p++;
+
+percent.innerHTML=p+"%";
+
+if(p>=100){
+
+clearInterval(timer);
+
+paymentStep3.style.display="none";
+
+paymentStep4.style.display="block";
+
+pendingAmount.innerHTML=payAmount.innerHTML;
+
+showUTR.innerHTML=utrNumber.value;
+
+orderID.innerHTML="BZ"+Math.floor(Math.random()*999999);
+
+}
+
+},25);
+
+}
