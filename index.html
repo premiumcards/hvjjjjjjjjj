@@ -249,5 +249,85 @@ Verify Transaction Ledger →
 
 </div>
     <script src="script.js"></script>
+    <!-- ========================= -->
+<!-- PAYMENT MODAL -->
+<!-- ========================= -->
+
+<div class="modal-backdrop" id="paymentModal" aria-hidden="true">
+
+  <section class="modal payment-modal" role="dialog">
+
+    <button class="modal-close" onclick="closePayment()">×</button>
+
+    <!-- STEP 1 -->
+
+    <div id="paymentStep1">
+
+      <p class="eyebrow">STEP 1 / 4</p>
+
+      <h2>Secure Pipeline Acquisition</h2>
+
+      <h1 id="payAmount">₹1000</h1>
+
+      <input
+        type="text"
+        id="coupon"
+        placeholder="Enter Coupon Code">
+
+      <div class="payment-buttons">
+
+        <button class="primary-btn">
+          Scan & Pay (QR)
+        </button>
+
+        <button class="ghost-btn">
+          Pay with UPI App
+        </button>
+
+      </div>
+
+      <div class="qr-box">
+
+        <img
+          src="payment-qr.jpg"
+          alt="Payment QR">
+
+      </div>
+
+      <div class="upi-grid">
+
+        <button>Google Pay</button>
+
+        <button>PhonePe</button>
+
+        <button>Paytm</button>
+
+        <button>BHIM</button>
+
+        <button>Amazon Pay</button>
+
+        <button>Other UPI</button>
+
+      </div>
+
+      <p class="scan-note">
+
+        Scan this QR using any UPI App
+
+      </p>
+
+      <button
+        class="primary-btn"
+        id="goStep2">
+
+        Verify Transaction Ledger →
+
+      </button>
+
+    </div>
+
+  </section>
+
+</div>
   </body>
 </html>
