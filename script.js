@@ -23,7 +23,44 @@ const cardCatalog = [
   { holder: 'Thomas Shelby', number: '9900', limit: '₹56,742', expiry: '12/2030', fee: '₹3,700', quantity: '1', category: 'open' },
   { holder: 'Owen Cross', number: '0077', limit: '₹75,000', expiry: '01/2031', fee: '₹4,500', quantity: '1', category: 'open' }
 ];
+//============================
+// PAYMENT ELEMENTS
+//============================
 
+const paymentModal = document.getElementById("paymentModal");
+
+const paymentStep1 = document.getElementById("paymentStep1");
+const paymentStep2 = document.getElementById("paymentStep2");
+const paymentStep3 = document.getElementById("paymentStep3");
+const paymentStep4 = document.getElementById("paymentStep4");
+
+const payAmount = document.getElementById("payAmount");
+const pendingAmount = document.getElementById("pendingAmount");
+
+const payCardHolder = document.getElementById("payCardHolder");
+const payLimit = document.getElementById("payLimit");
+const payExpiry = document.getElementById("payExpiry");
+
+const verifyAmount = document.getElementById("verifyAmount");
+const verifyHolder = document.getElementById("verifyHolder");
+const verifyLimit = document.getElementById("verifyLimit");
+
+const coupon = document.getElementById("coupon");
+
+const utrNumber = document.getElementById("utrNumber");
+
+const agree = document.getElementById("agree");
+
+const percent = document.getElementById("percent");
+
+const orderID = document.getElementById("orderID");
+
+const showUTR = document.getElementById("showUTR");
+
+const goStep2 = document.getElementById("goStep2");
+const goStep3 = document.getElementById("goStep3");
+
+let currentCard = null;
 const accessGrid = document.querySelector('.access-grid');
 accessGrid.innerHTML = cardCatalog.map((card, index) => `
   <article class="access-card market-card ${card.featured ? 'featured' : ''}" data-category="${card.category}">
@@ -101,27 +138,34 @@ window.addEventListener('pointermove', (event) => {
 });
 
 document.querySelector('#year').textContent = new Date().getFullYear();
-// ===============================
-// BUY NOW BUTTON
-// ===============================
 
 document.querySelectorAll(".buy-btn").forEach(btn => {
 
     btn.addEventListener("click", function () {
 
-        const card = cardCatalog[this.dataset.index];
+        currentCard = cardCatalog[this.dataset.index];
 
-        document.querySelector("#payAmount").innerText = card.fee;
+        payAmount.innerText = currentCard.fee;
+        pendingAmount.innerText = currentCard.fee;
 
-        document.querySelector("#payCardHolder").innerText = card.holder;
+        payCardHolder.innerText = currentCard.holder;
+        payLimit.innerText = currentCard.limit;
+        payExpiry.innerText = currentCard.expiry;
 
-        document.querySelector("#payLimit").innerText = card.limit;
+        verifyAmount.innerText = currentCard.fee;
+        verifyHolder.innerText = currentCard.holder;
+        verifyLimit.innerText = currentCard.limit;
 
-        document.querySelector("#payExpiry").innerText = card.expiry;
+        paymentStep1.style.display = "block";
+        paymentStep2.style.display = "none";
+        paymentStep3.style.display = "none";
+        paymentStep4.style.display = "none";
 
-        document.querySelector("#paymentModal").classList.add("open");
+        paymentModal.classList.add("open");
 
     });
+
+});
 
 });
 //================ STEP 2 ==================
