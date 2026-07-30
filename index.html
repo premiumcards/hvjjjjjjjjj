@@ -262,7 +262,127 @@ Verify Transaction Ledger →
     <!-- STEP 1 -->
 
     <div id="paymentStep1">
+<!-- ================= STEP 2 ================= -->
 
+<div id="paymentStep2" style="display:none;">
+
+    <p class="eyebrow">STEP 2 / 4</p>
+
+    <h2>Transaction Verification</h2>
+
+    <input
+        id="utrNumber"
+        type="text"
+        placeholder="Enter UTR / Transaction ID">
+
+    <div class="order-box">
+
+        <p>Amount :
+            <b id="verifyAmount"></b>
+        </p>
+
+        <p>Card Holder :
+            <b id="verifyHolder"></b>
+        </p>
+
+        <p>Limit :
+            <b id="verifyLimit"></b>
+        </p>
+
+    </div>
+
+    <label class="agree">
+
+        <input type="checkbox" id="agree">
+
+        I confirm payment has been completed.
+
+    </label>
+
+    <button
+        id="goStep3"
+        class="primary-btn">
+
+        Secure Network Verification →
+
+    </button>
+
+</div>
+
+
+<!-- ================= STEP 3 ================= -->
+
+<div id="paymentStep3" style="display:none;">
+
+    <p class="eyebrow">STEP 3 / 4</p>
+
+    <h2>Secure Network Verification</h2>
+
+    <div class="loader-circle"></div>
+
+    <h3 id="percent">
+
+        0%
+
+    </h3>
+
+    <p>
+
+        Verifying payment...
+
+    </p>
+
+</div>
+
+
+<!-- ================= STEP 4 ================= -->
+
+<div id="paymentStep4" style="display:none;">
+
+    <p class="eyebrow">STEP 4 / 4</p>
+
+    <h2>Payment Pending</h2>
+
+    <h3 id="pendingAmount"></h3>
+
+    <p>
+
+        Order ID :
+        <b id="orderID"></b>
+
+    </p>
+
+    <p>
+
+        UTR :
+        <b id="showUTR"></b>
+
+    </p>
+
+    <p>
+
+        Status :
+        <span style="color:orange">
+
+            Pending Admin Verification
+
+        </span>
+
+    </p>
+
+    <a
+
+        class="primary-btn"
+
+        target="_blank"
+
+        href="https://t.me/Premium_cards_shoz_support">
+
+        Telegram Support
+
+    </a>
+
+</div>
       <p class="eyebrow">STEP 1 / 4</p>
 
       <h2>Secure Pipeline Acquisition</h2>
