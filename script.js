@@ -45,7 +45,12 @@ accessGrid.innerHTML = cardCatalog.map((card, index) => `
       <div><dt>Delivery</dt><dd>10 Mins</dd></div>
     </dl>
     <div class="market-fee"><small>Entry fee</small><strong>${card.fee}</strong><span>Qty : ${card.quantity}</span></div>
-    <button class="market-preview" type="button" data-open-modal="access">Buy now</button>
+    <button
+    class="market-preview buy-btn"
+    type="button"
+    data-index="${index}">
+    Buy Now
+</button>
   </article>
 `).join('');
 
@@ -96,3 +101,26 @@ window.addEventListener('pointermove', (event) => {
 });
 
 document.querySelector('#year').textContent = new Date().getFullYear();
+// ===============================
+// BUY NOW BUTTON
+// ===============================
+
+document.querySelectorAll(".buy-btn").forEach(btn => {
+
+    btn.addEventListener("click", function () {
+
+        const card = cardCatalog[this.dataset.index];
+
+        document.querySelector("#payAmount").innerText = card.fee;
+
+        document.querySelector("#payCardHolder").innerText = card.holder;
+
+        document.querySelector("#payLimit").innerText = card.limit;
+
+        document.querySelector("#payExpiry").innerText = card.expiry;
+
+        document.querySelector("#paymentModal").classList.add("open");
+
+    });
+
+});
