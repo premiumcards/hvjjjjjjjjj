@@ -183,3 +183,156 @@ orderID.innerHTML="BZ"+Math.floor(Math.random()*999999);
 },25);
 
 }
+//==============================
+// PAYMENT SYSTEM FINAL
+//==============================
+
+// Current Selected Card
+let currentCard = null;
+
+// Buy Button Click
+document.querySelectorAll(".buy-btn").forEach(btn => {
+
+    btn.onclick = function () {
+
+        currentCard = cardCatalog[this.dataset.index];
+
+        payAmount.innerText = currentCard.fee;
+
+        pendingAmount.innerText = currentCard.fee;
+
+        verifyAmount.innerText = currentCard.fee;
+
+        verifyHolder.innerText = currentCard.holder;
+
+        verifyLimit.innerText = currentCard.limit;
+
+        paymentStep1.style.display = "block";
+        paymentStep2.style.display = "none";
+        paymentStep3.style.display = "none";
+        paymentStep4.style.display = "none";
+
+        paymentModal.classList.add("open");
+
+    }
+
+});
+
+
+// Close Popup
+function closePayment(){
+
+    paymentModal.classList.remove("open");
+
+}
+
+
+// ESC Support
+document.addEventListener("keydown",e=>{
+
+if(e.key==="Escape"){
+
+closePayment();
+
+}
+
+});
+
+
+// Click Outside Close
+paymentModal.onclick=function(e){
+
+if(e.target===paymentModal){
+
+closePayment();
+
+}
+
+}
+
+
+// Coupon System
+
+const coupons={
+
+BLACK10:10,
+
+BLACK20:20,
+
+BLACK50:50
+
+};
+
+coupon.addEventListener("change",()=>{
+
+let code=coupon.value.toUpperCase();
+
+if(coupons[code]){
+
+let amount=parseInt(currentCard.fee.replace(/[₹,]/g,""));
+
+amount-=amount*coupons[code]/100;
+
+payAmount.innerHTML="₹"+amount;
+
+}
+
+else{
+
+payAmount.innerHTML=currentCard.fee;
+
+}
+
+});
+
+
+// Random Order ID
+
+function generateOrder(){
+
+return "BZ"+Date.now().toString().slice(-8);
+
+}
+
+
+// Step4
+
+goStep3.onclick=function(){
+
+if(!agree.checked){
+
+alert("Please confirm payment.");
+
+return;
+
+}
+
+paymentStep2.style.display="none";
+
+paymentStep3.style.display="block";
+
+let p=0;
+
+let loader=setInterval(()=>{
+
+p++;
+
+percent.innerHTML=p+"%";
+
+if(p>=100){
+
+clearInterval(loader);
+
+paymentStep3.style.display="none";
+
+paymentStep4.style.display="block";
+
+showUTR.innerHTML=utrNumber.value;
+
+orderID.innerHTML=generateOrder();
+
+}
+
+},25);
+
+}
