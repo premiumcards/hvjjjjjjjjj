@@ -201,3 +201,188 @@
   .pass-market .pass-front { padding: 18px 25px; }
   .market-number { font-size: .78rem; letter-spacing: .12em; }
 }
+/* ============================= */
+/* PREMIUM PAYMENT MODAL */
+/* ============================= */
+
+.payment-modal{
+    width:min(620px,95%);
+    max-height:90vh;
+    overflow-y:auto;
+    border-radius:24px;
+    padding:35px;
+    background:linear-gradient(135deg,#0f1023,#18103a,#0b0d1d);
+    border:1px solid rgba(255,255,255,.08);
+    box-shadow:0 0 50px rgba(132,66,255,.35);
+}
+
+.payment-modal h1{
+    text-align:center;
+    font-size:52px;
+    margin:20px 0;
+    color:#fff;
+}
+
+.payment-modal h2{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.payment-modal input{
+    width:100%;
+    padding:16px;
+    border-radius:14px;
+    background:#131528;
+    color:#fff;
+    border:1px solid rgba(255,255,255,.12);
+    margin-bottom:18px;
+}
+
+.payment-modal input:focus{
+    outline:none;
+    border-color:#9a4dff;
+    box-shadow:0 0 20px rgba(154,77,255,.35);
+}
+
+.payment-buttons{
+    display:flex;
+    gap:12px;
+    margin-bottom:20px;
+}
+
+.payment-buttons button{
+    flex:1;
+}
+
+.qr-box{
+    display:flex;
+    justify-content:center;
+    margin:25px 0;
+}
+
+.qr-box img{
+    width:260px;
+    border-radius:20px;
+    background:#fff;
+    padding:10px;
+    box-shadow:0 0 35px rgba(0,0,0,.35);
+}
+
+.upi-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+    margin:20px 0;
+}
+
+.upi-grid button{
+    background:#1a1830;
+    border:1px solid rgba(255,255,255,.12);
+    color:#fff;
+    border-radius:12px;
+    padding:13px;
+    transition:.25s;
+}
+
+.upi-grid button:hover{
+    background:#7b2eff;
+    transform:translateY(-2px);
+}
+
+.scan-note{
+    text-align:center;
+    color:#78d8ff;
+    margin-top:18px;
+}
+
+.order-box{
+    background:#14162a;
+    border-radius:18px;
+    padding:20px;
+    margin:20px 0;
+}
+
+.order-box p{
+    display:flex;
+    justify-content:space-between;
+    margin:10px 0;
+}
+
+.agree{
+    display:flex;
+    gap:10px;
+    align-items:center;
+    margin:20px 0;
+}
+
+.loader-circle{
+    width:110px;
+    height:110px;
+    margin:35px auto;
+    border-radius:50%;
+    border:6px solid rgba(255,255,255,.12);
+    border-top:6px solid #a84dff;
+    animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+
+0%{
+transform:rotate(0deg);
+}
+
+100%{
+transform:rotate(360deg);
+}
+
+}
+
+#percent{
+    text-align:center;
+    font-size:46px;
+    margin:10px 0;
+}
+
+#paymentStep4 p{
+    text-align:center;
+    margin:14px 0;
+}
+
+#paymentStep4 .primary-btn{
+    width:100%;
+    margin-top:25px;
+}
+
+@media(max-width:600px){
+
+.payment-modal{
+
+padding:22px;
+
+}
+
+.upi-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.payment-buttons{
+
+flex-direction:column;
+
+}
+
+.payment-modal h1{
+
+font-size:42px;
+
+}
+
+.qr-box img{
+
+width:220px;
+
+}
+
+}
